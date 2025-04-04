@@ -1,10 +1,22 @@
 # top-cryptos
+
 A marketplace to find the top cryptocurrencies with real time updates and information about each one of those.
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+npm i
+
+# or
+
+npm install
+
+# or
+
+yarn
+
+Second, run the development server:
 
 ```bash
 npm run dev
