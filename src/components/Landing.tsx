@@ -17,19 +17,16 @@ export default function Landing() {
   const cryptoSectionRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Open confirmation modal
   const openModal = (name: string) => {
     setSelectedCrypto(name);
     setModalOpen(true);
   };
 
-  // Close confirmation modal
   const closeModal = () => {
     setModalOpen(false);
     setSelectedCrypto(null);
   };
 
-  // Confirm navigation
   const confirmNavigation = () => {
     if (selectedCrypto) {
       router.push(`/crypto/${selectedCrypto.toLowerCase()}`);
@@ -44,18 +41,15 @@ export default function Landing() {
     }
   };
 
-  // Filter crypto based on search query
   const filteredCrypto = cryptoList.filter((coin) =>
     coin.name.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
 <div className="w-full flex flex-col items-center bg-gradient-to-r from-stone-500 to-stone-700">
-  {/* Hero Section */}
   <div className="h-auto w-full flex flex-col justify-center items-center px-6 mb-32">
     <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl">
       
-      {/* Left: Text Section (Vertically Centered) */}
       <motion.div
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -77,7 +71,6 @@ export default function Landing() {
         </button>
       </motion.div>
 
-      {/* Right: Lottie Animation (Vertically Centered & Larger) */}
       <motion.div
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -93,7 +86,6 @@ export default function Landing() {
       </motion.div>
 
     </div>
-        {/* Search Section */}
         <div className="mt-8 md:mt-20 w-full flex flex-col items-center">
           {!showSearch && (
             <motion.button
@@ -116,7 +108,6 @@ export default function Landing() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="bg-gradient-to-br from-stone-600 to-stone-800 border border-stone-500 shadow-xl rounded-lg max-w-md w-full mt-4 px-6 py-4 backdrop-blur-lg bg-opacity-90"
               >
-                {/* Close Button */}
                 <button
                   onClick={() => setShowSearch(false)}
                   className="cursor-pointer text-gray-300 hover:text-white transition float-right mb-2"
@@ -131,8 +122,6 @@ export default function Landing() {
                   placeholder="Search for a cryptocurrency..."
                   className="w-full outline-none bg-stone-700 text-gray-200 placeholder-gray-400 pl-4 py-2 text-sm rounded-md border border-gray-500 focus:border-amber-400 focus:ring-2 focus:ring-amber-500 transition"
                 />
-
-                {/* Currency Selector */}
                 <select
                   value={currency}
                   onChange={(e) => setCurrency(e.target.value)}
@@ -143,8 +132,6 @@ export default function Landing() {
                   <option className="bg-stone-700" value="gbp">GBP (£)</option>
                   <option className="bg-stone-700" value="inr">INR (₹)</option>
                 </select>
-
-                {/* Search Results */}
                 {loading ? (
                   <p className="text-center text-gray-400 mt-3">Loading...</p>
                 ) : error ? (
@@ -176,13 +163,9 @@ export default function Landing() {
           </AnimatePresence>
         </div>
       </div>
-
-      {/* MostViewed Section */}
       <div ref={cryptoSectionRef} className="w-full">
         <MostViewed />
       </div>
-
-      {/* Confirmation Modal */}
       <ConfirmationModal isOpen={isModalOpen} onClose={closeModal} onConfirm={confirmNavigation} selectedCrypto={selectedCrypto} />
     </div>
   );

@@ -1,6 +1,0 @@
-[
-    { "id": "bitcoin", "name": "Bitcoin", "symbol": "BTC" },
-    { "id": "ethereum", "name": "Ethereum", "symbol": "ETH" },
-    { "id": "tether", "name": "Tether", "symbol": "USDT" }
-  ]
-  

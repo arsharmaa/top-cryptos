@@ -71,7 +71,6 @@ export default function CryptoPage() {
 
   return (
     <div className="w-[96vw] mx-auto m-5 flex flex-col items-center bg-gradient-to-r from-stone-500 to-stone-700 min-h-screen px-6">
-      {/* Crypto Info Card */}
       <div className="max-w-6xl mt-8 w-full bg-stone-600 shadow-xl border border-stone-500 rounded-lg p-6 text-gray-200">
       <div className="flex items-center justify-between">
       <div className="flex items-center">
@@ -91,8 +90,6 @@ export default function CryptoPage() {
           </p>
         </div>
       </div>
-
-      {/* Price Info */}
       <div className="text-right">
         <h2 className="text-lg md:text-2xl font-semibold text-gray-100">
           Price: ${crypto.current_price.toLocaleString()}
@@ -106,8 +103,6 @@ export default function CryptoPage() {
         </p>
       </div>
     </div>
-
-    {/* Other Stats in Grid */}
     <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
       <p className="p-4 bg-stone-700 rounded-lg shadow-md">
         🔼 High (24h): <span className="font-semibold">${crypto.high_24h.toLocaleString()}</span>
@@ -119,8 +114,6 @@ export default function CryptoPage() {
         📊 Total Volume: <span className="font-semibold">${crypto.total_volume.toLocaleString()}</span>
       </p>
     </div>
-
-    {/* Centered Back Button */}
     <div className="mt-8 flex justify-center">
       <button
         onClick={() => router.push("/")}
@@ -130,8 +123,6 @@ export default function CryptoPage() {
       </button>
       </div>
       </div>
-
-      {/* Recently Viewed Cryptos - Centered */}
       <div className="w-full flex justify-center">
         <CryptoSlider />
       </div>

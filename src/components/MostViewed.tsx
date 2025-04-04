@@ -45,8 +45,6 @@ export default function MostViewed() {
       <p className="text-gray-400 mt-3 text-center mt-8">
         Get insights into the most valuable cryptocurrencies today.
       </p>
-
-      {/* Swiper Slider */}
       <div className="w-[90vw] max-w-6xl mt-10 relative px-4 pb-16">
         <Swiper
           modules={[Navigation]}
@@ -70,7 +68,6 @@ export default function MostViewed() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-gradient-to-r from-gray-800 to-stone-700 rounded-2xl shadow-lg overflow-hidden w-full max-w-[22rem] h-[40vh] border border-[#30363D] p-6 flex flex-col items-center justify-between"
               >
-                {/* Fixed Image Sizing */}
                 <div className="w-[90px] h-[90px] flex items-center justify-center">
                   <Image
                     src={`/crypto-logos/${crypto.image}.jpg`}
@@ -97,8 +94,6 @@ export default function MostViewed() {
           ))}
         </Swiper>
       </div>
-
-       {/* Confirmation Modal */}
        <ConfirmationModal
         isOpen={isModalOpen}
         onClose={closeModal}
